@@ -202,8 +202,36 @@ MSE
 cross entropy
 
 \subsubsection{Regularization}
+The role of regularization is to penalize certain types of function to emerge during the training process. In particular, we are interested in penalizing functions that are too complicated and too non-linear that would overfit the training set.
 
-L1 and L2 regularization
+This is usually done by adding an extra term, $\Omega \left( W \right) $, to the loss function that depends on the value of the weights of the connections between neurons; the bias terms are not usually regularized.
 
+A common choice is the $L_2$ regularizer where the extra term is the $L_2$ norm of $\textbf{W^{(k)}}$:
+\begin{equation}
+\Omega \left( \textbf{W} \right) = \sum_k \sum_i \sum_j \left( W_{ij}^{(k)} \right)^2 = \sum_k |\textbf{W^{(k)}} | ^2
+\label{eq:L2-reg}
+\end{equation}
+
+The gradient of this term with respect to the weights is:
+\begin{equation}
+\nabla_{\textbf{W^{(k)}}} \Omega \left( \textbf{W} \right) = 2 \textbf{W^{(k)}}
+\label{eq:L2-reg-grad}
+\end{equation}
+
+Another option is to use the $L_1$ norm instead. The regularization term takes the form:
+\begin{equation}
+\Omega \left( \textbf{W} \right) = \sum_k \sum_i \sum_j | W_{ij}^{(k)} |
+\label{eq:L1-reg}
+\end{equation}
+which leads to the gradient:
+\begin{equation}
+\nabla_{\textbf{W^{(k)}}} \Omega \left( \textbf{W} \right) = sign \left( \textbf{W^{(k)}} \right)
+\label{eq:L1-reg-grad}
+\end{equation}
+when $w_{ij}^{(k)} \neq 0$
+
+Unlike the $L_2$-regularization, this gradient does not vanish as the value of $w_{ij}^{(k)}$ approaches zero. Therefore, in this case there is a stronger tendency to got parameters that are very small, allowing for the interpretation of these connections as non-existent, decreasing the resulting complexity of the network.
+
+The relative importance of the regularization term is controlled by an hyperparameter $\lambda$ called the weight decay. When $\lambda$ is set too high the training algorithm will "prefer" minimizing the magnitude of the parameters over making output closer to the labels. If $\lambda$ is too low, the optimizer is likely to train the network into overfitting the training set.
 Dropout
 forces each unit to be able to output a reasonable result without relying on the neurons. In other words, each hidden unit is forced to extract on its own a more useful feature
