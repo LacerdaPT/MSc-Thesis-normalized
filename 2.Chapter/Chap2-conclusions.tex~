@@ -1,0 +1,14 @@
+\documentclass{article}
+\usepackage{graphicx}
+
+\begin{document}
+\section{Conclusion}
+\label{sec:chap2-conclusion}
+
+Using five recordings from the labeled dataset acquired by Neto et al. it was possible to identify limitations in KlustaKwik. In this dataset:
+
+blah blah blah
+
+noise,motor cortex, neuroseeker probes, blind motorized targeting
+
+\end{document}

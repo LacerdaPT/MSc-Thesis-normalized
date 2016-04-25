@@ -1,0 +1,16 @@
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The Introduction:
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\fancychapter{Conclusions and Future Work}
+\label{cap:conclusions}
+
+\section{Future Directions}
+In this work, I tried to assess the viability of the pursuit of better spike detection algorithms in the context of deep learning. I tried to implement feed-forward deep neural networks to detect Extracellular Action Potential of one particular neuron in each training of the DNN. Comparing it with the state-of-the-art algorithm designed to detect these spikes (phy) seems to lead the conclusion such pursuit is worthy, since the deep learning approach yielded better results. This work should, however, be regarded as a "proof of concept". Indeed, much remains to be done. In the particular framework of this document, the architecture, configuration and hyperparameters should be further studied to provide as universally optimal values as possible for learning with any dataset.
+
+The datasets I based this work on were recorded using 127-channel planar probe spanning over 90 $\mu m$ in one direction and 717.5 $\mu m$ on the other. Neurons in its vicinity usually only impress a small portion of the probe. Therefore a spike detection algorithm for such probe should be agnostic to where the neuron's footprint rests. In other words, it should translation invariant. So, moving away from this work, I think it should be useful to try applying Convolutional Neural Networks, where the adjustable parameters are actually many small sized kernels that shall be convoluted with the output of the previous layer. Regardless of where the neuron's footprint appeared a well-trained kernel  would be run through the whole probe and would eventually result in a positive identification.
+
+The success in identifying the spikes in the 
+
+Another possible use for deep neural network would be to train a noise filter. The raw filtered signal would be fed in the input layer and then supervised learning would train the DNN to provide the Juxta-Triggered Averages (JTA). If successfully trained, the resulting output would be relatively noise-free and a simple threshold-based detection algorithm could be applied. If many different recordings were utilized, perhaps the resulting DNN could be universal and used in any recording. Analysing the layers of this trained network, this could also help researchers understand what the biological noise in the extracellular medium really is.
+
+\cleardoublepage

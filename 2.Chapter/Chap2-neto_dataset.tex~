@@ -1,0 +1,50 @@
+
+\section{Dataset}
+\label{sec:Netodataset}
+The dataset consists of twenty-three paired recording with a distance of less than 200 $\mu m$ between the targeted neuron and the closest extracellular electrode. These were acquired from twenty-three cells, from the cortex of several anesthetized rats.
+
+On Fig. \ref{fig:neto-data-description}a is an example of the signal acquired from using the juxtacellular pipette, which, with an amplitude of around 4mV, reveals the typical high signal-to-ratio that the signal this probe yields. On the figure (figure \ref{fig:neto-data-description}b), many of the spikes were aligned and  plotted together. We can see that this waveform keeps it shape over the course of the recording. In this case, as is in most of the recording, it has a positive-before-negative biphasic waveform, which is indicative that there was a good coupling between the pipette and the neuron's soma (Herfst et al, 2012). However, in two case, that I used, the waveform has a negative-before-positive profile indicating incomplete contact between the cell membrane and the pipette, lowering the signal-to-ratio (SNR) significantly but remaining detectable. (2015\_09\_03\_Pair9.0 and 2015\_09\_04\_Pair5.0)
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\textwidth]{2.Chapter/dataset-description-dev.pdf}
+	\caption{Paired extracellular and juxtacellular recordings from the same neuron
+(a) Representative juxtacellular recording from a cell in layer 5 of motor cortex, 68 $\mu m$ from the extracellular probe (2014\_10\_17\_Pair1.0), with a firing rate of 0.9 Hz. (b) The juxtacellular action potentials are overlaid, time-locked to the time of positive peak, with the average spike waveform superimposed in green (n= 442 spikes). (c) Representative extracellular recording that corresponds to the same time window as the recording in panel A. Traces are ordered from upper to lower electrodes and channel numbers are indicated. (d) Extracellular waveforms, aligned on the juxtacellular spike peak, for a single channel (channel 18). (e) the juxtacellular triggered average (JTA) obtained by including an increasing number of juxtacellular events (n as indicated). (f) Spatial distribution of the amplitude for each channel’s extracellular JTA waveform. The peak-to-peak amplitude within a time window (+/- 1 ms) surrounding the juxtacellular event was measured and the indicated color code was used to display and interpolate these amplitudes throughout the probe shaft. (g) The JTAs are spatially arranged. The channel with the highest peak-to-peak JTA (channel 18) is marked with a black (*) and the closest channel (channel 9) is marked with a red (*).
+}
+\label{fig:neto-data-description}
+\end{figure}
+
+With such a high SNR, one can reliably use a simple threshold-based detector to calculate the times (hereafter juxta times) at which the juxta neuron spiked.The earliest extracellular recordings in the dataset were done using the 32-channel probe. Part of one of these recordings after the high-pass filter is illustrated in Fig. \ref{fig:neto-data-description}c.  Each of these traces are plotted next to its neighbors, according the geometry of the probe. Most of the spikes are sensed by many electrodes revealing a coherent region of influence. This signal usually doesn't have a high SNR, as can be seen in Fig. \ref{fig:neto-data-description}d. To get the waveform of the EAP on this probe we perform Juxta-Triggered Averages (JTAs), where windows of 4 ms centered on the juxta spikes are averaged so that the noise decreases and the waveform becomes clear. In figure \ref{fig:neto-data-description}g) are represented the JTAs of each electrode in its correct position in the 32-channel probe. It is possible to see that the EAP has a different waveform on different electrode sites. They are also displaced in time: on electrodes farther way, the waveform is delayed with respect to one on a electrode closer to the neuron. The JTA peak-to-peak amplitude for each channel interpolated within the electrode site geometry, sometimes called “the cell footprint” (Delgado Ruz and Schultz, 2014), is shown in Figure (figure \ref{fig:neto-data-description}f)
+
+During the course of this project I focused on 5 recordings where the 128-channels probe was used. These are presented in Fig. \ref{fig:recordings-summary} and summarized in Table \ref{tab:sum-recordings}.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\textwidth]{2.Chapter/dataset-JTA.png}
+	\caption{Presentation of the recording used in this project. Here are presented the spatial distribution of the peak-to-peak amplitude of the Juxta-Triggered Averages, illustrated as a interpolated heatmap. In addition, the extracellular JTA waveforms for all the extracellular electrodes are spatially arranged
+}
+\label{fig:recordings-summary}
+\end{figure}
+
+
+\begin{table}[!h]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+\textbf{Recording ID} & \textbf{Short ID} & \textbf{Distance ($\mu m$) } & \textbf{P2P ($\mu V$)} & \textbf{Depth ($\mu m$)} & \textbf{\# Juxta spikes}\\ \hline
+2015\_09\_09\_Pair7.0 & 997 & 136.2 $\pm$ 40 & 20.7 & 1032.8 & 1082  \\ \hline
+2015\_09\_04\_Pair5.0 & 945 & 96.1 $\pm$ 40 & 30.8 & 1185.5 & 185  \\ \hline
+2015\_09\_03\_Pair6.0 & 936 & 153.3 $\pm$  40 & 24.1 & 1063.2 & 3329 \\ \hline
+2015\_09\_03\_Pair9.0 & 939 & 11.5 $\pm$  40 & 416.3 & 1152.8 & 5007  \\ \hline
+2015\_08\_21\_Pair3.0 & 8213 & 132.8 $\pm$ 40 & 19.4 & 1286.0 & 8117 \\ \hline
+\end{tabular}
+\caption{Information about the recordings used. The values on the "Recording ID" are conform the dataset provided by Neto et al (2016). For convenience, a Short ID will be used throughout this document. P2P stands for Peak-to-Peak Amplitude calculated as the $\max_i \left( \max_t \left( JTA_i \right) - \min_t \left( JTA_i \right)\right), i=0,\ldots , 127$. In the fifth column are the values of the depth in the cortex. In the last column are the number of spikes detected in the signal from the Juxtacellular pipette.}
+\label{tab:sum-recordings}
+\end{table}
+
+We have some variability in this ensemble. 
+The recording 939 was recorded very closed to the neuron and therefore has a very large P2P amplitude and lies above the noise; it also recorded many spikes. 
+The recording 945 has a very low count of spikes and relatively low P2P amplitude. For this reason its JTA is not very well defined.
+Despite its low P2P amplitude, the recording 8213 is the one with the most events, making its JTA reasonable.
+
+In Fig. \ref{fig:recordings-summary}, the spatiotemporal profile of each recording is noticeable and centered around the closest electrode in the probe.

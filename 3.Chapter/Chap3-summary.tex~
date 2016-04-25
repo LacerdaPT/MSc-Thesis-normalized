@@ -1,0 +1,10 @@
+\documentclass{article}
+\usepackage{graphicx}
+
+\begin{document}
+
+To address the issues presented in the previous chapter and to take advantage of the labeled paired recordings in Neto et al.,
+
+In order to overcome the issues presented in the previous chapter, a different approach was tried. In this chapter is report the attempt of employing recent techniques of deep learning to perform spike detection.
+
+\end{document}
