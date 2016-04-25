@@ -1,5 +1,3 @@
 \begin{resumo}
-
-O objectivo deste trabalho ... (Português)
-
+Para compreender como o cérebro produz toda a diversidade do comportamento animal, é fundamental ter à nossa disposição métodos quantitativos e objectivos para medir a actividade neuronal, em particular ao nível de grandes populações de neurónios. Desenvolvimentos recentes no design de circuitos integrados e microfabrição permitiram a produção de sondas densas com múltiplos eléctrodos e de grandes dimensões com centenas de sites activos. No entanto, os métodos computacionais para analisar os dados recolhidos com estas sondas de nova geração não acompanharam a evolução da tecnologia. Em Neto et al. (2016), os autores apresentaram pela primeira vez dados recolhidos in-vivo simultaneamente de sondas de silício com 128 canais e uma pipeta juxtacelular. Neste documento está relatada a aplicação de métodos de aprendizagem usando redes neuronais artificiais profundas com o objectivo de fazer detecção de Potenciais de Acção Extracelulares usando os dados dessas experiências. Foram testadas várias arquitecturas e configurações da rede com os diferentes dados do conjunto. Os resultados são comparados com o SpikeDetekt, um método de detecção de Potenciais de Acção proposto por Rossant et al. (2016)
 \end{resumo}
