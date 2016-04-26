@@ -223,12 +223,21 @@ The recordings 945 and 997 kept oscillating between two "states". In both cases 
 
 Trained with the recording from the cell 939, the DNN managed to correctly classify 92.31\% of the EAPs present. 
 
+\section{Discussion}
+
 It should be noted that it is very likely that the windows labeled as "0" have many other spikes. This may actually make the training process much more difficult: since the production of any EAP relies on similar physical process, many spikes may be very similar to the spike from the juxta neuron, making the distinction, and thus the training, more difficult. For this reason, using a bigger dataset should return significantly better results, in particular, a bigger dataset with more positive examples. The upsampling step may force the training to give a larger importance to each positive example but it doesn't feed the network any new information about the event of interest.
 
 %%%%%%%%%%%%%%%%%%%%%%   COMPARISON WITH PHY    %%%%%%%%%%%%
-Comparing with the results using phy presented in Chapter 2, this method seems to give better results: when the network didn't converge to the "zero" solution, the detection rates more than doubled, reaching a 5-fold increase on the recording 997. However, the detection rate on the recordings on as it was discussed in Chapter 2, probably the number of events detected by phy is underestimated and thus the improvement in such dataset may not be a big as it may seem.
+Comparing with the results using phy presented in Chapter 2, this method seems to give better results: when the network didn't converge to the "zero" solution, the detection rates more than doubled, reaching a 5-fold increase on the recording 997. However, the detection rates on the recordings 945 and 997 correspond to the detection of only one spike, since the validation set in these case only had 5 and 9 different positive examples. 
 
-It is also important to refer that the oscillations observed with the recording 945 and 997 suggest that the training used in the present work may not very robust. In reality, the configurations and hyperparameters considered optimal were only studied with the recording 939 and may not be optimal for all datasets.
+It is also important to refer that the oscillations observed with the recording 945 and 997 suggest that the training used in the present work may not very robust: it appears that the network "jumps" easily between two not deep local minimum. Therefore it seems imperative to trained the network with more data, in particular data with a larger fraction of different positive examples.
+
+The recording 939 trained the network into detecting 92.31\%, which a high number, with very few false positives and false negatives. However, in this recording the P2P amplitude was 416.3 $\mu V$, with a noise standard deviation of 10.51 $\mu V$, and should be easily detected with the conservative application of classic methods such as a threshold-based detection.
+As it was discussed in Chapter 2, probably the number of events detected by phy in this recording is underestimated and thus the improvement in this dataset may not be a big as it may seem.
+
+In reality, the configurations and hyperparameters considered optimal were only studied with the recording 939 and may not be optimal for all datasets.
+
+
 
 
 It is important to keep in mind the question we're training the network to answer: whether or not a time window there was a spike from this particular cell, and not a spike from any cell. Indeed, each network was trained with only one dataset individually. It would be interesting to train a DNN sequentially with different datasets recorded with the same probe. This would not only increase the number of examples (in particular positive examples), but also make this procedure more generalizable and applicable in more situations. However, this would affect the training: it may make it easier if the datasets are similar, or it may make it harder since the DNN would have "crystalized" on the specific structure of the datasets  it was previously trained with. 
