@@ -1,4 +1,3 @@
-
 \section{Introduction}
 For millennia, humans (and other animals) have tried to understand the rules that govern the phenomena surrounding them based on observations. This knowledge allowed them to expand the reach of their predictions and develop inventions to improve their way of living, as well as the empirical laws that support all the fields of fundamental science, and consequently applied science. In the last 5 decades, with the advent of several kinds of sensors, fast electronics and large storage capacity, quantitative observations have become more and more numerous at a great level of detail (the "deluge of data") and it appears that this way of learning is becoming more and more necessary in the present than ever before.
 
@@ -117,7 +116,7 @@ A Artificial Neural Network (ANN) is put together by hooking together many of th
 
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=\linewidth]{3.Chapter/firstANN.pdf}
+	\includegraphics[width=0.7\linewidth]{3.Chapter/firstANN.pdf}
 	\caption{Graphical visualization of an illustrative example of an artificial neural network. This ANN is composed by three layers with three neurons on the first two and one neuron on the output layer. The connections between all the neurons are also represented, in addition to the connection to the bias term represented by the extra nodes on the bottom with the label "+1".
 }
 \label{fig:first-ANN}
@@ -160,7 +159,7 @@ The key aspect of learning with ANN is that, due to its generalization power, th
 
 But this framework leads to questions of how exactly to define the model. In other words, how to define the architecture of the ANN, i.e., how many neurons should there be in the ANN and how should they be connected? There are two basic topologies: shallow networks and deep networks. In shallow networks, there is at most one hidden layer, whereas a network is said to be deep if it has two or more hidden layers. This distinction has become very important over the last three decades. On the one hand, it has been shown that a shallow ANN with only one arbitrarily large hidden layer could approximate a function to any level of precision (\cite{hornik1989multilayer}). Nonetheless, this level of precision would only increase with exponentially increasing number of neurons, becoming computationally very demanding.
 
-On the other hand, deep neural networks are conceptually more interesting because each layer can be thought of as a representation of the input in a higher and higher level of abstraction, similar to how the visual processing hierarchy in cortex is thought to operate to construct human visual perception. However, using back-propagation and gradient descent with the usual sigmoid or tanh function can very quickly run into the problem of “vanishing gradients”, when the activation function saturates and the training will not proceed any further. Moreover, even in the cases where training is possible, deep networks were originally found to perform worse than shallow networks.
+On the other hand, deep neural networks are conceptually more interesting because each layer can be thought of as a representation of the input in a higher and higher level of abstraction, similar to how the visual processing hierarchy in cortex is thought to operate to construct human visual perception. However, using back-propagation and gradient descent with the usual sigmoid or tanh function can very quickly run into the problem of “vanishing gradients”, when the activation function saturates and the training will not proceed any further. Moreover, even in the cases where training is possible, deep networks were originally found to perform worse than shallow networks. \cite{NNDL} \cite{Larochelleyoutube}
 
 However, in the past decade there have been several theoretical and technological advances that brought deep neural network back to life.
 
@@ -184,7 +183,7 @@ Another interesting characteristic of stochastic learning is that it is less pro
 \label{subsubsec:Adagrad}
 One solution for the problem just mentioned is AdaGrad (Adaptive Gradient optimization), proposed in 2011 by Duchi et al. \cite{duchi2011adaptive}. In this algorithm, the learning rate is adapted in each iteration according to the geometry of the loss function in the vicinity of the current values of the parameters. For each element in the parameter matrix, the user-defined learning rate $\eta$ is weighted by factor that makes it larger or smaller according to a (fast) approximation of the Hessian Matrix. In other words, the update for each parameter is more coarse when far from a local minimum and finer when close to a local minimum.
 
-It should be noted that this algorithm was proposed for convex optimization problems. However, even in non-convex situations AdaGrad usually performs better that standard SGD. (\cite{gupta2014training})
+It should be noted that this algorithm was proposed for convex optimization problems. However, even in non-convex situations AdaGrad usually performs better that standard SGD.\cite{gupta2014training}
 
 \subsubsection{Parameter Initialization}
 
@@ -197,41 +196,48 @@ For example, LeCun Uniform was defined with sigmoid activation functions in mind
 
 \subsubsection{Loss Function}
 \label{subsubsec:loss-function}
-MSE
 
-cross entropy
+As mentioned above, most optimization algorithms (as is the case of SGD) try to minimize a loss function. There are many ways to define this function. One possible way is using the Mean Squared Error as explained in \ref{subsubsec:linear-regression}. However in classification tasks the output of the classifier is usually interpreted as the probability of a certain input belonging the a certain class. With this in mind, it is possible to define a loss function as the distance between the desired probability distribution and that of the output of the classifier in the current configuration. This can be done by means of the cross-entropy. In the case of a binary classification, the (not normalized) cross-entropy is estimated from the samples as:
+\begin{equation}
+H = - \sum_j \left( y^{(j)} \log h_{W,b} \left( x^{(j)} \right) + (1 - y^{(j)}) \log \left( 1 - h_{W,b}\left( x^{(j)} \right) \right) \right)
+\end{equation}
+where $y^{(j)}$ can only take the values 0 or 1 and therefore only one of the terms will be non-zero. When the classifier outputs the right answer the logarithm will tend to zero and so will the penalty corresponding to that data point. \cite{murphy2012machine}
 
 \subsubsection{Regularization}
 The role of regularization is to penalize certain types of function to emerge during the training process. In particular, we are interested in penalizing functions that are too complicated and too non-linear that would overfit the training set.
 
 This is usually done by adding an extra term, $\Omega \left( W \right) $, to the loss function that depends on the value of the weights of the connections between neurons; the bias terms are not usually regularized.
 
-A common choice is the $L_2$ regularizer where the extra term is the $L_2$ norm of $\textbf{W^{(k)}}$:
+A common choice is the $L_2$ regularizer where the extra term is the $L_2$ norm of $\mathbf{W^{(k)}}$:
 \begin{equation}
-\Omega \left( \textbf{W} \right) = \sum_k \sum_i \sum_j \left( W_{ij}^{(k)} \right)^2 = \sum_k |\textbf{W^{(k)}} | ^2
+\Omega \left( \mathbf{W} \right) = \sum_k \sum_i \sum_j \left( W_{ij}^{(k)} \right)^2 = \sum_k |\mathbf{W^{(k)}} | ^2
 \label{eq:L2-reg}
 \end{equation}
 
 The gradient of this term with respect to the weights is:
 \begin{equation}
-\nabla_{\textbf{W^{(k)}}} \Omega \left( \textbf{W} \right) = 2 \textbf{W^{(k)}}
+\nabla_{\mathbf{W^{(k)}}} \Omega \left( \mathbf{W} \right) = 2 \mathbf{W^{(k)}}
 \label{eq:L2-reg-grad}
 \end{equation}
 
 Another option is to use the $L_1$ norm instead. The regularization term takes the form:
 \begin{equation}
-\Omega \left( \textbf{W} \right) = \sum_k \sum_i \sum_j | W_{ij}^{(k)} |
+\Omega \left( \mathbf{W} \right) = \sum_k \sum_i \sum_j | W_{ij}^{(k)} |
 \label{eq:L1-reg}
 \end{equation}
 which leads to the gradient:
 \begin{equation}
-\nabla_{\textbf{W^{(k)}}} \Omega \left( \textbf{W} \right) = sign \left( \textbf{W^{(k)}} \right)
+\nabla_{\mathbf{W^{(k)}}} \Omega \left( \mathbf{W} \right) = sign \left( \mathbf{W^{(k)}} \right)
 \label{eq:L1-reg-grad}
 \end{equation}
 when $w_{ij}^{(k)} \neq 0$
 
 Unlike the $L_2$-regularization, this gradient does not vanish as the value of $w_{ij}^{(k)}$ approaches zero. Therefore, in this case there is a stronger tendency to got parameters that are very small, allowing for the interpretation of these connections as non-existent, decreasing the resulting complexity of the network.
 
-The relative importance of the regularization term is controlled by an hyperparameter $\lambda$ called the weight decay. When $\lambda$ is set too high the training algorithm will "prefer" minimizing the magnitude of the parameters over making output closer to the labels. If $\lambda$ is too low, the optimizer is likely to train the network into overfitting the training set.
-Dropout
-forces each unit to be able to output a reasonable result without relying on the neurons. In other words, each hidden unit is forced to extract on its own a more useful feature
+The relative importance of the regularization term is controlled by an hyperparameter $\lambda$ called the weight decay. When $\lambda$ is set too high the training algorithm will "prefer" minimizing the magnitude of the parameters over making output closer to the labels. If $\lambda$ is too low, the optimizer is likely to train the network into overfitting the training set. \cite{Larochelleyoutube}
+
+Another way of dealing the problem of overfitting is using stochastic dropout training.
+The term "dropout" refers to dropping out units (mostly hidden units) in a neural network. Dropping out means temporarily removing certain neurons from the network, along with all its incoming and outgoing connections. The choice of which units to drop is random. In the simplest case, each unit is retained with a fixed probability p independent of other units, where p can be chosen the user.
+In other words, in each epoch at training time, a fraction p of units from a certain layer is "forgotten". This results in a smaller temporary network. Then the usual training (forward propagation and back propagation) is performed in this subnetwork. The value of p can be different for each layer.
+With this procedure, a unit cannot "assume" that all units will be present in each epoch, so it cannot co-adapt to other units. This way each neuron is forced to extract feature that are useful generally and not only when used in combination with other units.
+At test time, the output of each unit is multiplied by the corresponding value of p. \cite{Hinton2012} \cite{srivastava14}
