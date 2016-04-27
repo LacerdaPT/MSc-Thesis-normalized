@@ -72,6 +72,19 @@ To calculate the number of events corresponding to the juxta, it is necessary to
 \label{tab:CCcorrection}
 \end{table}
 
-Even in the recording 939 the detection rate is fairly low, considering it has a very large P2P amplitude.
-In the other cases, phy yields a detection accuracy close to zero. This is not surprising considering the algorithm used by phy. The maximum P2P amplitude of JTAs of these case lies between lies between 19.4$\mu V$ and 30.8$\mu V$ and the strong threshold is always larger than 48.43 $\mu V$. Since it is required that at least one sample in a connected component be larger than the strong threshold these spikes are never detected. Two possible explanations exist for this number of detected events. First, the neuron may have spiked simultaneously to a large noise fluctuation causing it to be detected. Secondly, the connected components of these spikes could have been connected with the connected component of other spike which exceeded the strong threshold. This would result in the detection one single spike where the computed spike time was closer to the corresponding juxta spike time and therefore contributed to the central bin in the cross-correlograms.
+
+In most cases, phy yields a detection accuracy close to zero. This is not surprising considering the algorithm used by phy. The maximum P2P amplitude of JTAs of these case lies between lies between 19.4$\mu V$ and 30.8$\mu V$ and the strong threshold is always larger than 48.43 $\mu V$. Since it is required that at least one sample in a connected component be larger than the strong threshold these spikes are never detected. Three possible explanations exist for this number of detected events. First, the neuron may have spiked simultaneously to a large noise fluctuation causing it to be detected. Secondly, the low number of events made possible a noise estimation of the background distribution and the central peak may not correspond at all to activity from the juxta neuron. Lastly, the connected components of these spikes could have been connected with the connected component of other spike which exceeded the strong threshold. This would result in the detection one single spike where the computed spike time was closer to the corresponding juxta spike time and therefore contributed to the central bin in the cross-correlograms.
+
+Even in the recording 939 the detection rate is fairly low, considering it has a very large P2P amplitude. In fact, the connect component corresponding to spikes from the juxta neuron were expected to be large and therefore may have been merged together with other spikes present in probe. In this case, all these events will only be detected as one, which leads to the relatively low count in the central bin of the cross-correlogram of this recording.
+
+To illustrate this, the masks of the events that occurred closest to the juxta spikes were calculated. 
+
+The average of these masks is presented in Fig. REFERENCE. The maximum value for the standard deviation of the average was $8.52 x 10^{-5}$ which is very low and therefore it is fair to say that most of the masks of the juxta spike are in this collection.
+
+Examples of these mask are in Fig. REFERENCE 
+
+Looking at the mask of the NUMBER or NUMBER it is easily seen that there are connected components from one/two spikes other than the one from the juxta neuron that were merged together.
+
+This situation could possibly be solve increasing the weak threshold, however this would lead to an increase of false negatives. 
+%%%%%% Another possibility would be performing multimodal analysis to separate the different connect components.
 
