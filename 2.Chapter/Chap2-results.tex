@@ -77,14 +77,28 @@ In most cases, phy yields a detection accuracy close to zero. This is not surpri
 
 Even in the recording 939 the detection rate is fairly low, considering it has a very large P2P amplitude. In fact, the connect component corresponding to spikes from the juxta neuron were expected to be large and therefore may have been merged together with other spikes present in probe. In this case, all these events will only be detected as one, which leads to the relatively low count in the central bin of the cross-correlogram of this recording.
 
-To illustrate this, the masks of the events that occurred closest to the juxta spikes were calculated. 
+To illustrate this, the masks of the events that occurred closest to the juxta spikes were calculated. Examples of these mask are in Fig. \ref{fig:masks-examples}.
+ 
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\linewidth]{2.Chapter/masks-939-ready.pdf}
+	\caption{Examples of masks on the events whose assigned times (on top of each plot, in ms) is closest to the times from the juxta neuron.
+}
+\label{fig:masks-examples}
+\end{figure}
 
-The average of these masks is presented in Fig. REFERENCE. The maximum value for the standard deviation of the average was $8.52 x 10^{-5}$ which is very low and therefore it is fair to say that most of the masks of the juxta spike are in this collection.
+The average of these masks is presented in Fig. \ref{fig:masks-average-std}. The maximum value for the standard deviation of the average was $6.0 \times 10^{-3}$ which is very low and therefore it is fair to say that most of the masks of the juxta spike are in this collection.
 
-Examples of these mask are in Fig. REFERENCE 
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.5\linewidth]{2.Chapter/average-and-std-mask-939.pdf}
+	\caption{Average mask and its standard deviation of the events whose times were closest to the times from the juxta neuron.
+}
+\label{fig:masks-average-std}
+\end{figure}
 
-Looking at the mask of the NUMBER or NUMBER it is easily seen that there are connected components from one/two spikes other than the one from the juxta neuron that were merged together.
 
-This situation could possibly be solve increasing the weak threshold, however this would lead to an increase of false negatives. 
+Looking at the mask of the events on times 86.5 ms  and 100.1 ms it is clear that there are connected components from one/two spikes other than the one from the juxta neuron that were merged together. This situation could possibly be solve increasing the weak threshold, however this would lead to an increase of false negatives. 
 %%%%%% Another possibility would be performing multimodal analysis to separate the different connect components.
 
+In this chapter, using the ground-truth data from Neto et al. it was possible to identify some of the issues and limitations of the SpikeDetekt algorithm. On the next chapter a different approach is presented and evaluated.
