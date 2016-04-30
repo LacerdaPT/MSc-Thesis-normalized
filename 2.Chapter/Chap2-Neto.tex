@@ -5,9 +5,9 @@ In \cite{Netoetal}, 2016 they described in detail a procedure for precisely alig
 
 \subsection{Set-up design and protocol}
 \label{subsec:setup-and-protocol}
-In Figure \ref{fig:experimental-aparatus}a is presented a schematic of the dual-probe recording station where two aligned, multi-axis micromanipulators (Scientifica, UK) and a long working distance optical microscope are required to reliably target neural cell bodies located within ~100 $\mu m$ of the polytrode electrode sites without optical guidance. A “PatchStar” (PS) and an “In-Vivo Manipulator” (IVM) are mounted on opposite sides of a rodent stereotaxic frame with different approach angles, 61\degree  and -48.61\degree  from the horizontal, respectively (Fig \ref{fig:experimental-aparatus}b). 
+In Figure \ref{fig:experimental-aparatus}a is presented a schematic of the dual-probe recording station where two aligned, multi-axis micromanipulators (Scientifica, UK) and a long working distance optical microscope are required to reliably target neural cell bodies located within ~100 $\mu m$ of the polytrode electrode sites without optical guidance. A “PatchStar” (PS) and an “In-Vivo Manipulator” (IVM) are mounted on opposite sides of a rodent stereotaxic frame with different approach angles, $61^{\circ}$  and $-48.61^{\circ}$  from the horizontal, respectively (Fig \ref{fig:experimental-aparatus}b). 
 
-\begin{figure}[!h]
+\begin{figure}[htb]
 	\centering
 	\includegraphics[width=\textwidth]{2.Chapter/experimental-setup-dev.pdf}
 	\caption{In vivo paired-recording setup: design and method.
@@ -62,10 +62,10 @@ During the course of this project I focused on 5 recordings where the 128-channe
 2015\_09\_03\_Pair9.0 & 939 & 11.5 $\pm$  40 & 416.3 & 1152.8 & 5007  \\
 2015\_08\_21\_Pair3.0 & 8213 & 132.8 $\pm$ 40 & 19.4 & 1286.0 & 8117 \\ 
 \end{tabular}
-\caption{Information about the recordings used. The values on the "Recording ID" are conform the dataset provided by \cite{Netoetal}. For convenience, a Short ID will be used throughout this document. P2P stands for Peak-to-Peak Amplitude calculated as the $\max_i \left( \max_t \left( JTA_i \right) - \min_t \left( JTA_i \right)\right), i=0,\ldots , 127$. In the fifth column are the values of the depth in the cortex. In the last column are the number of spikes detected in the signal from the Juxtacellular pipette.}
+\caption{Information about the recordings used. The values on the "Recording ID" are conform the dataset provided by \cite{Netoetal}. For convenience, a Short ID will be used throughout this document. P2P stands for Peak-to-Peak Amplitude calculated as the maximum value across electrodes of the difference between the maximum and minimum values of the JTA. In the fifth column are the values of the depth in the cortex. In the last column are the number of spikes detected in the signal from the Juxtacellular pipette.}
 \label{tab:sum-recordings}
 \end{table}
-
+%$\max_i \left( \max_t \left( JTA_i \right) - \min_t \left( JTA_i \right)\right), i=0,\ldots , 127$
 We have some variability in this ensemble. 
 The recording 939 was recorded very closed to the neuron and therefore has a very large P2P amplitude and lies above the noise; it also recorded many spikes. 
 The recording 945 has a very low count of spikes and relatively low P2P amplitude. For this reason its JTA is not very well defined.

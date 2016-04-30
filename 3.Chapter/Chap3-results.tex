@@ -119,7 +119,7 @@ Using the recording 939, the basic DNN was trained with different sets of parame
 
 To study the learning rate, the weight decay was set to $\lambda = 0.001$ and the initialization method was LeCun Uniform. The learning rate was set to 0.001, 0.01 and 0.1. The results are in the Fig. \ref{fig:study-LR} and \ref{fig:study-LR-zoomed}
 
-\begin{figure}[htbp]
+\begin{figure}[htb]
 	\centering
 	\includegraphics[width=\linewidth]{3.Chapter/study-on-learning-rates-norm.pdf}
 	\caption{Study on Learning Rate. Loss function and accuracies in the training set and in the validation set.The weight decay was fixed at $\lambda = 0.001$, and the initialization method was LeCun Uniform.
@@ -127,7 +127,7 @@ To study the learning rate, the weight decay was set to $\lambda = 0.001$ and th
 \label{fig:study-LR}
 \end{figure}
 
-\begin{figure}[htbp]
+\begin{figure}[htb]
 	\centering
 	\includegraphics[width=\linewidth]{3.Chapter/study-on-learning-rates-zoomed-ending-norm.pdf}
 	\caption{Study on Learning Rate - zoomed. Loss function and accuracies in the training set and in the validation set.The weight decay was fixed at $\lambda = 0.001$, and the initialization method was LeCun Uniform.
@@ -137,7 +137,7 @@ To study the learning rate, the weight decay was set to $\lambda = 0.001$ and th
 
 To study the weight decay, the learning rate was fixed at $\eta = 0.01$ and LeCun Uniform was used. The results are in Fig. \ref{fig:study-weightdecays} and Fig. \ref{fig:study-weightdecays-zoomed}
 
-\begin{figure}[htbp]
+\begin{figure}[htb]
 	\centering
 	\includegraphics[width=\linewidth]{3.Chapter/study-on-weight-decay-norm.pdf}
 	\caption{Study on weight decay. Loss function and accuracies in the training set and in the validation set. LeCun uniform was used and the Learning Rate was set to $\eta = 0.01$.
@@ -145,7 +145,7 @@ To study the weight decay, the learning rate was fixed at $\eta = 0.01$ and LeCu
 \label{fig:study-weightdecays}
 \end{figure}
 
-\begin{figure}[htbp]
+\begin{figure}[htb]
 	\centering
 	\includegraphics[width=\linewidth]{3.Chapter/study-on-weight-decay-zoomed-norm.pdf}
 	\caption{Study on weight decay - zoomed. Loss function and accuracies in the training set and in the validation set. LeCun uniform was used and the Learning Rate was set to $\eta = 0.001$.
@@ -155,7 +155,7 @@ To study the weight decay, the learning rate was fixed at $\eta = 0.01$ and LeCu
 
 
 To study the initialization method, the learning rate was fixed at $\eta = 0.001$ and the weight decay set to $\lambda = 0.01$. The Initialization methods considered were: LeCun Uniform, He Uniform, Glorot Uniform and Uniform. The results are in Fig. \ref{fig:study-InitMethods}.
-\begin{figure}[htbp]
+\begin{figure}[htb]
 	\centering
 	\includegraphics[width=\linewidth]{3.Chapter/study-on-initialization-methods-norm.pdf}
 	\caption{Study on Initialization Methods- zoomed. Loss function and accuracies in the training set and in the validation set.The weight decay was fixed at $\lambda = 0.01$ and the Learning Rate was set to $\eta = 0.001$.
@@ -165,7 +165,7 @@ To study the initialization method, the learning rate was fixed at $\eta = 0.001
 
 To study how sensitive this model was to initial conditions, different seeds for the pseudorandom generator were set. The learning rate was set to $\eta = 0.01$, the weight decay to $\lambda = 0.001$, and the initialization method used was LeCun Uniform. The results are in Fig. \ref{fig:study-seeds}
 
-\begin{figure}[htbp]
+\begin{figure}[htb]
 	\centering
 	\includegraphics[width=\linewidth]{3.Chapter/study-on-initial-parameters.pdf}
 	\caption{Study on Different Initialization. Loss function and accuracies in the training set and in the validation set.The weight decay was fixed at $\lambda = 0.01$ and the Learning Rate was set to $\eta = 0.001$ and the initialization method was LeCun Uniform.
@@ -186,7 +186,7 @@ The depth of the network was also tested, by comparing the performance of DNNs w
 
 Regarding the depth of the architecture, the DNN achieved very similar results on the validation set. The shallower DNN couldn't be trained as well as the deeped networks as can be seen on the accuracy on the TS, even having around 50000 more parameters to fit. The 4-hidden-layers DNN displays the tendency to overfit the training data. For these reasons, the DNN with 3 hidden layers was adopted.
 
-\begin{figure}[htbp]
+\begin{figure}[htb]
 	\centering
 	\includegraphics[width=\linewidth]{3.Chapter/study-on-depth-norm.pdf}
 	\caption{Study on Depth. Loss function and accuracies in the training set and in the validation set.The learning rate was $\eta = 0.001$, the weight decay was fixed at $\lambda = 0.01$, and the initialization method was LeCun Uniform.
@@ -206,7 +206,7 @@ To recap, the hyperparameter considered optimal in the present situation were:
 \label{subsec:application}
 The optimal hyperparameters and configurations discussed in the previous section were used in the training of the DNN with all the datasets. The performance results are in Fig. \ref{fig:study-cells}.
 
-\begin{figure}[htbp]
+\begin{figure}[htb]
 	\centering
 	\includegraphics[width=\linewidth]{3.Chapter/study-on-different-cells-norm.pdf}
 	\caption{Study on Different Recordings. Loss function and accuracies in the training set and in the validation set.The learning rate was $\eta = 0.01$, the weight decay was fixed at $\lambda = 0.001$, and the initialization method was LeCun Uniform. On the legend on the top is the Cell ID and on the legend on the bottom are the P2P amplitude (in $\mu V$).
@@ -222,7 +222,7 @@ TPR = \frac{TP}{TP + FN}
 
 The results are presented in Table \ref{table:confusion-matrix}.
 
-\begin{table}[htbp]
+\begin{table}[htb]
 \begin{center}
 \begin{tabular}{c|cccc|cc}
 cell ID & TP & TN & FP & FN & TPR & phy acc.\\ \hline
@@ -244,6 +244,7 @@ The recordings 945 and 997 kept oscillating between two "states". In both cases 
 Trained with the recording from the cell 939, the DNN managed to correctly classify 92.31\% of the EAPs present. 
 
 \section{Discussion}
+\label{sec:chap3-discussion}
 
 
 Looking at Fig. \ref{fig:study-cells} it can be seen that with the chosen training configuration all recordings trained the DNN after only a few epochs: by the epoch 20 the accuracies in all cases reached their final value, or even getting worse afterwards, and therefore applying a stop criteria should be considered.
@@ -251,22 +252,21 @@ Looking at Fig. \ref{fig:study-cells} it can be seen that with the chosen traini
 %%%%%%%%%%%%%%%%%%%%%%   COMPARISON WITH PHY    %%%%%%%%%%%%
 Comparing with the results using phy presented in Chapter 2, this method seems to give better results: when the network didn't converge to the "zero" solution, the detection rates more than doubled, reaching a 5-fold increase on the recording 997. However, the detection rates on the recordings 945 and 997 correspond to the detection of only one spike, since the validation set in these case only had 5 and 9 different positive examples. 
 
-It is also important to refer that the oscillations observed with the recording 945 and 997 suggest that the training used in the present work may not very robust: it appears that the network "jumps" easily between two not deep local minimum. Therefore it seems imperative to trained the network with more data. Another possible improvement would be increasing the probability parameter on the dropout procedure.
+It is also important to refer that the oscillations observed with the recording 945 and 997 suggest that the training used work may not be very robust: it appears that the network "jumps" easily between two local minima. Therefore it seems imperative to trained the network with more data. Another possible improvement would be increasing the probability parameter on the dropout procedure.
 
-The recording 939 trained the network into detecting 92.31\%, which a high number, with very few false positives and false negatives. However, in this recording the P2P amplitude was 416.3 $\mu V$, with a noise standard deviation of 10.51 $\mu V$, and should be easily detected with the conservative application of classic methods such as a threshold-based detection.
+The recording 939 trained the network into detecting 92.31\%, which is a large value, with very few false positives and false negatives. However, in this recording the P2P amplitude was 416.3 $\mu V$, with a noise standard deviation of 10.51 $\mu V$, and should be easily detected with the conservative application of classic methods such as a threshold-based detection.
 %Nonetheless, this method seems to be able to deal with situation of overlapping spikes. 
 %As it was discussed in Chapter 2, probably the number of events detected by phy in this recording is underestimated and thus the improvement in this dataset may not be a big as it may seem.
 
 In reality, the configurations and hyperparameters considered optimal were only studied with the recording 939 and may not be optimal for all datasets.
 
-It should be noted that it is very likely that the windows labeled as "0" have many other spikes. This may actually make the training process much more difficult: since the production of any EAP relies on similar physical process, many spikes may be very similar to the spike from the juxta neuron, making the distinction, and thus the training, more difficult. For this reason, using a bigger dataset should return significantly better results, in particular, a bigger dataset with more positive examples. The upsampling step may have forced the training to give a larger importance to each positive example but it didn't feed with the network any new information about the event of interest. In fact, the detection rates on the recordings 945 and 997 correspond to the detection of only one spike, since the validation set in these cases only had 5 and 9 different positive examples, respectively. Possibly it could have been better to, instead of upsampling, perform downsampling or both: reduce the number of negative examples and increase the number of positive examples. In this way, the all the variability on the positive examples would be taken into consideration, making the classification easier.
+It should be noted that it is very likely that the windows labeled as "0" have many other spikes. This may actually make the training process much more difficult: since the production of any EAP relies on similar physical process, many spikes may be very similar to the spike from the juxta neuron, making the distinction, and thus the training, more difficult. For this reason, using a bigger dataset should return significantly better results, in particular, a bigger dataset with more different positive examples. The upsampling step may have forced the training to give a larger importance to each positive example but it didn't feed the network any new information about the event of interest. Possibly it could have been better to, instead of upsampling, perform downsampling or both: reduce the number of negative examples and increase the number of positive examples. In this way, more variability on the positive examples would be taken into consideration, making the network learn the useful structure of the EAPs better.
 
-talk about cell with many different positive examples but low P2P!!!!!!!!!!!!!!!!!!!!!
+In the recording 8213 there were 202 different positive examples in the training set, more or less the same as in recording 939 which had 207. Nonetheless, the DNN was trained into the "zero" solution. At the same time this recording was the lowest in amplitude, with a $19.4 \mu V$ P2P amplitude, and the one with the highest noise standard deviation of $12.95 \mu V$, therefore most of the example are probably "drowned" in the noise, preventing the DNN to see the signal of interest. This suggests that there may be a threshold SNR below which this method cannot be applied, perhaps regardless of how many spikes there are in the training set.
 
-It is important to keep in mind the question we're training the network to answer: whether or not, in a certain time window, there was a spike from this particular cell, and not a spike from any cell. Indeed, each network was trained with only one dataset individually. It would be interesting to train a DNN with different datasets recorded with the same probe. In this situation the question would be different: in this time window is a there a spike from this set of targeted cells? This would not only increase the number of examples (in particular positive examples), but also make this procedure more generalizable and applicable in more situations when enough different datasets were used. However, this would affect the training: it may make it easier if the datasets are similar, or it may make it harder if there is a big difference in  EAPs from the considered juxta neurons. 
+It is important to keep in mind the question we're training the network to answer: whether or not, in a certain time window, there was a spike from this particular cell, and not a spike from any cell. Indeed, each network was trained with only one dataset individually. It would be interesting to train a DNN with different datasets recorded with the same probe. In this situation the question would be different: in this time window is a there a spike from this set of targeted cells? This would not only increase the number of examples (in particular positive examples), but also make this procedure more generalizable and applicable in more situations when enough different datasets have been used. However, this would affect the training: it may make it easier if the datasets are similar, or it may make it harder if there is a big difference in  EAPs from the considered juxta neurons. 
 
-It is never too much noting that this new dataset would have to shuffled if the training algorithm doesn't do it for us, for instance if we train the network in chunks of data for memory contraints. Otherwise, on the first epochs of training the DNN would "crystalize" on detecting that particular first EAP and may be harder to train it away from that configuration to learn the new EAPs.
-
+It is never too much noting that this new dataset would have to shuffled if the training algorithm doesn't do it for us, for instance if we train the network in chunks of data due to memory contraints. Otherwise, on the first epochs of training the DNN would "crystalize" on detecting that particular first EAP and may be harder to train it away from that configuration to learn the new EAPs. 
 Another way to achieve this would be producing a hybrid dataset where many ground truth datasets are brought together, for examples as an average or hand-crafted, to produce one simulated recording with larger variability on the positive examples without increasing the size of the dataset, and therefore improving the unbalance in the dataset.
 
-As mentioned above, due to memory the time windows were time shifted from the previous by 5 samples. Windows whose central sample were closest to each time juxta time where labeled as positives. Therefore if sequential time windows were presented, the DNN would probably several positive predictions.
+As mentioned above, due to memory the time windows were time shifted from the previous by 5 samples. Windows whose central sample were closest to each time juxta time where labeled as positives. Therefore if sequential time windows were presented, the DNN would probably yield 5  positive predictions per juxta spike.
