@@ -10,12 +10,12 @@ To be sure about the quality of the juxtacellular recording, auto-correlograms w
 \label{fig:AC}
 \end{figure}
 
-All the auto-correlograms display a usual distribution, clearly showing a gap in the interval from -5ms to 5ms, assuring that the cell never spiked twice  within a 5ms interval, which conforms with the typical values of refractory period of 2-3ms.
+All the auto-correlograms display a usual distribution, clearly showing a gap in the interval from -5ms to 5ms, assuring that the cell never spiked twice  within a 5ms interval, which conforms with the typical values of refractory period of $2-3ms$.
 
 It is worth noting that on the auto-correlogram corresponding to the recording 939 a second peak is resolved around $\tau = -9 ms$ and $\tau = 9 ms$.
 
 For each recording, phy was run with the following parameters:
-The data was filtered with a forwards-backwards Butterworth filter of order 3 with cutoff frequency set to 500Hz. The noise standard deviation was evaluated in 50 excerpts of 1 second each. The weak threshold was $\theta_w = 2 \sigma_{noise}$ and the strong threshold was $\theta_s = 4.5 \sigma_{noise}$.
+The data was filtered with a forwards-backwards Butterworth filter of order 3 with cutoff frequency set to 500Hz. The noise standard deviation, $\sigma_{noise}$, was evaluated in 50 excerpts of 1 second each. The weak threshold was $\theta_w = 2 \sigma_{noise}$ and the strong threshold was $\theta_s = 4.5 \sigma_{noise}$.
 
 The results are presented in table \ref{tab:results-from-phy}.
 
@@ -45,9 +45,9 @@ In Fig. \ref{fig:CC} are the whole-probe cross-correlograms for the recordings, 
 \label{fig:CC}
 \end{figure}
 
-In Appendix NUMBEROFAPPENDIX are the cross-correlograms per channel, where the spike train output by phy was split according to the electrode the spike was detected on using the masks.
+In Appendix A are the cross-correlograms per channel for the neuron 939, where the spike train output by phy was split according to the electrode the spike was detected on using the masks. It is noticeable that the peak only appears in some channels, which are the ones where the JTA has a larger amplitude in Fig. \ref{fig:recordings-summary}.
 
-On Fig \ref{fig:CC}, all cross-correlograms present a somewhat coherent distribution. This means that for every value $\tau$ in the considered interval, there exists some temporal correlation between the juxta neuron and the activity of the rest of the neurons in the recorded volume. This is to be expected. According to Ruiz-Mejias et al., the use of ketamine as anesthesia in rats provokes the synchronization in the population activity in many cortical areas, including the motor cortex. This gives rise to "up" and "down" states, where most neurons in the population are firing or silent, respectively. In addition, they report that the frequency of oscillation of these states is, on average, 0.97Hz, which is close to the firing rates reported in Neto et al. 
+In Fig \ref{fig:CC}, all cross-correlograms present a somewhat coherent distribution. This means that for every value $\tau$ in the considered interval, there exists some temporal correlation between the juxta neuron and the activity of the rest of the neurons in the recorded volume. This is to be expected. According to Ruiz-Mejias et al., the use of ketamine as anesthesia in rats provokes the synchronization in the population activity in many cortical areas, including the motor cortex. This gives rise to "up" and "down" states, where most neurons in the population are firing or silent, respectively. In addition, they report that the frequency of oscillation of these states is, on average, 0.97Hz, which is close to the firing rates reported in Neto et al. 
 
 Only on the cross-correlogram corresponding to the recording 939 can we see a distinct peak when $\tau=0 ms$, on top of the correlation with the background activity. This means that phy managed to find juxta neuron.
 
@@ -73,7 +73,7 @@ To calculate the number of events corresponding to the juxta, it is necessary to
 \end{table}
 
 
-In most cases, phy yields a detection accuracy close to zero. This is not surprising considering the algorithm used by phy. The maximum P2P amplitude of JTAs of these case lies between lies between 19.4$\mu V$ and 30.8$\mu V$ and the strong threshold is always larger than 48.43 $\mu V$. Since it is required that at least one sample in a connected component be larger than the strong threshold these spikes are never detected. Three possible explanations exist for this number of detected events. First, the neuron may have spiked simultaneously to a large noise fluctuation causing it to be detected. Secondly, the low number of events made possible a noise estimation of the background distribution and the central peak may not correspond at all to activity from the juxta neuron. Lastly, the connected components of these spikes could have been connected with the connected component of other spike which exceeded the strong threshold. This would result in the detection one single spike where the computed spike time was closer to the corresponding juxta spike time and therefore contributed to the central bin in the cross-correlograms.
+In most cases, phy yields a detection accuracy close to zero. This is not surprising considering the algorithm used by phy. The maximum P2P amplitude of JTAs of these cases lies between 19.4$\mu V$ and 30.8$\mu V$ and the strong threshold is always larger than 48.43 $\mu V$. Since it is required that at least one sample in a connected component be larger than the strong threshold these spikes are never detected. Three possible explanations exist for this number of detected events. First, the neuron may have spiked simultaneously to a large noise fluctuation causing it to be detected. Secondly, the connected components of these spikes could have been connected with the connected component of other spike which exceeded the strong threshold. This would result in the detection one single spike where the computed spike time was closer to the corresponding juxta spike time and therefore contributed to the central bin in the cross-correlograms.
 
 Even in the recording 939 the detection rate is fairly low, considering it has a very large P2P amplitude. In fact, the connect component corresponding to spikes from the juxta neuron were expected to be large and therefore may have been merged together with other spikes present in probe. In this case, all these events will only be detected as one, which leads to the relatively low count in the central bin of the cross-correlogram of this recording.
 
@@ -98,7 +98,7 @@ The average of these masks is presented in Fig. \ref{fig:masks-average-std}. The
 \end{figure}
 
 
-Looking at the mask of the events on times 86.5 ms  and 100.1 ms it is clear that there are connected components from one/two spikes other than the one from the juxta neuron that were merged together. This situation could possibly be solve increasing the weak threshold, however this would lead to an increase of false negatives. 
+Looking at the mask of the events on times 86.5 ms  and 100.1 ms it is clear that there are connected components from two spikes other than the one from the juxta neuron that were merged together. This situation could possibly be solve increasing the weak threshold, however this would lead to an increase of false negatives. 
 %%%%%% Another possibility would be performing multimodal analysis to separate the different connect components.
 
 In this chapter, using the ground-truth data from Neto et al. it was possible to identify some of the issues and limitations of the SpikeDetekt algorithm. On the next chapter a different approach is presented and evaluated.
