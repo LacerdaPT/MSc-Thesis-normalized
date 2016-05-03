@@ -1,0 +1,98 @@
+\begin{thebibliography}{10}
+
+\bibitem{recce1989tetrode}
+{\em The tetrode: a new technique for multi-unit extracellular recording},
+  volume~15, 1989.
+
+\bibitem{dombovari2014vivo}
+Bal{\'a}zs Dombov{\'a}ri, Rich{\'a}rd Fi{\'a}th, B{\'a}lint~P{\'e}ter Kerekes,
+  Em{\'\i}lia T{\'o}th, Lucia Wittner, Domonkos Horv{\'a}th, Karsten Seidl,
+  Stanislav Herwik, Tom Torfs, Oliver Paul, et~al.
+\newblock In vivo validation of the electronic depth control probes.
+\newblock {\em Biomedical Engineering/Biomedizinische Technik}, 59(4):283--289,
+  2014.
+
+\bibitem{glorot2011deep}
+Xavier Glorot, Antoine Bordes, and Yoshua Bengio.
+\newblock Deep sparse rectifier neural networks.
+\newblock In {\em International Conference on Artificial Intelligence and
+  Statistics}, pages 315--323, 2011.
+
+\bibitem{gold2007biophysics}
+Carl Gold.
+\newblock {\em Biophysics of extracellular action potentials}.
+\newblock PhD thesis, California Institute of Technology, 2007.
+
+\bibitem{gray1995tetrodes}
+Charles~M Gray, Pedro~E Maldonado, Mathew Wilson, and Bruce McNaughton.
+\newblock Tetrodes markedly improve the reliability and yield of multiple
+  single-unit isolation from multi-unit recordings in cat striate cortex.
+\newblock {\em Journal of neuroscience methods}, 63(1):43--54, 1995.
+
+\bibitem{harris2000accuracy}
+Kenneth~D Harris, Darrell~A Henze, Jozsef Csicsvari, Hajime Hirase, and
+  Gy{\"o}rgy Buzs{\'a}ki.
+\newblock Accuracy of tetrode spike separation as determined by simultaneous
+  intracellular and extracellular measurements.
+\newblock {\em Journal of neurophysiology}, 84(1):401--414, 2000.
+
+\bibitem{kandel}
+Eric~Richard Kandel, James~Harris Schwartz, Thomas~M. Jessell, and Sarah Mack,
+  editors.
+\newblock {\em Principles of neural science}.
+\newblock McGraw-Hill Medical, New York, Chicago, San Francisco, 2013.
+
+\bibitem{lecun2015deep}
+Yann LeCun, Yoshua Bengio, and Geoffrey Hinton.
+\newblock Deep learning.
+\newblock {\em Nature}, 521(7553):436--444, 2015.
+
+\bibitem{mcnaughton1983stereotrode}
+Bruce~L McNaughton, John O'Keefe, and Carol~A Barnes.
+\newblock The stereotrode: a new technique for simultaneous isolation of
+  several single units in the central nervous system from multiple unit
+  records.
+\newblock {\em Journal of neuroscience methods}, 8(4):391--397, 1983.
+
+\bibitem{Netoetal}
+Joana~P. Neto, Gon{\c c}alo Lopes, Jo{\~a}o Fraz{\~a}o, Joana Nogueira, Pedro
+  Lacerda, Pedro Bai{\~a}o, Arno Aarts, Alexandru Andrei, Silke Musa, Elvira
+  Fortunato, Pedro Barquinha, and Adam Kampff.
+\newblock Validating silicon polytrodes with paired juxtacellular recordings:
+  method and dataset.
+\newblock {\em bioRxiv}, 2016.
+
+\bibitem{pettersen2008amplitude}
+Klas~H Pettersen and Gaute~T Einevoll.
+\newblock Amplitude variability and extracellular low-pass filtering of
+  neuronal spikes.
+\newblock {\em Biophysical journal}, 94(3):784--802, 2008.
+
+\bibitem{Rossant2016}
+Cyrille Rossant, Shabnam~N. Kadir, Dan F.~M. Goodman, John Schulman, Maximilian
+  L.~D. Hunter, Aman~B. Saleem, Andres Grosmark, Mariano Belluscio, George~H.
+  Denfield, Alexander~S. Ecker, Andreas~S. Tolias, Samuel Solomon, Gyorgy
+  Buzsaki, Matteo Carandini, and Kenneth~D. Harris.
+\newblock Spike sorting for large, dense electrode arrays.
+\newblock {\em Nat Neurosci}, 19(4):634--641, Apr 2016.
+\newblock Technical Report.
+
+\bibitem{ruther2015new}
+Patrick Ruther and Oliver Paul.
+\newblock New approaches for cmos-based devices for large-scale neural
+  recording.
+\newblock {\em Current opinion in neurobiology}, 32:31--37, 2015.
+
+\bibitem{shobe2015brain}
+Justin~L Shobe, Leslie~D Claar, Sepideh Parhami, Konstantin~I Bakhurin, and
+  Sotiris~C Masmanidis.
+\newblock Brain activity mapping at multiple scales with silicon microprobes
+  containing 1,024 electrodes.
+\newblock {\em Journal of neurophysiology}, 114(3):2043--2052, 2015.
+
+\bibitem{wilson1993dynamics}
+Matthew~A Wilson and Bruce~L McNaughton.
+\newblock Dynamics of the hippocampal ensemble code for space.
+\newblock {\em Science}, 261(5124):1055--1058, 1993.
+
+\end{thebibliography}

@@ -1,0 +1,49 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: summaryv2.aux
+The style file: plain.bst
+Database file #1: 02.biblio.bib
+Warning--to sort, need editor, organization, or key in recce1989tetrode
+Warning--can't use both volume and number fields in recce1989tetrode
+You've used 15 entries,
+            2118 wiz_defined-function locations,
+            602 strings with 7553 characters,
+and the built_in function-call counts, 6058 in all, are:
+= -- 566
+> -- 403
+< -- 2
++ -- 161
+- -- 144
+* -- 522
+:= -- 1042
+add.period$ -- 44
+call.type$ -- 15
+change.case$ -- 113
+chr.to.int$ -- 0
+cite$ -- 17
+duplicate$ -- 176
+empty$ -- 388
+format.name$ -- 144
+if$ -- 1192
+int.to.chr$ -- 0
+int.to.str$ -- 15
+missing$ -- 13
+newline$ -- 77
+num.names$ -- 29
+pop$ -- 100
+preamble$ -- 1
+purify$ -- 101
+quote$ -- 0
+skip$ -- 119
+stack$ -- 0
+substring$ -- 355
+swap$ -- 27
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 57
+warning$ -- 2
+while$ -- 50
+width$ -- 17
+write$ -- 164
+(There were 2 warnings)
