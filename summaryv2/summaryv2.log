@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.4.13)  3 MAY 2016 07:03
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.4.13)  3 MAY 2016 19:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -478,83 +478,88 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <8> on input line 19.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 19.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 31.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 31.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 31.
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] <2.Chapter/CC.pdf, id=
-16, 448.11731pt x 506.58525pt>
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 36.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 36.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 36.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[2] <2.Chapter/CC.pdf, id=17, 448.11731pt x 506.58525pt>
 File: 2.Chapter/CC.pdf Graphic file (type pdf)
 
 <use 2.Chapter/CC.pdf>
-Package pdftex.def Info: 2.Chapter/CC.pdf used on input line 87.
+Package pdftex.def Info: 2.Chapter/CC.pdf used on input line 71.
 (pdftex.def)             Requested size: 472.03123pt x 533.63849pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Overfull \hbox (1.3763pt too wide) in paragraph at lines 102--102
+Overfull \hbox (1.3763pt too wide) in paragraph at lines 86--86
 []\T1/lmr/m/n/10 Recording| 
  []
 
 
-Overfull \hbox (5.8447pt too wide) in paragraph at lines 102--102
+Overfull \hbox (5.8447pt too wide) in paragraph at lines 86--86
 []\T1/lmr/m/n/10 Corrected| 
  []
 
 [3] [4 <./2.Chapter/CC.pdf>]
-<2.Chapter/masks-939-ready-summary.pdf, id=1626, 516.74434pt x 206.17644pt>
+<2.Chapter/masks-939-ready-summary.pdf, id=1628, 516.74434pt x 206.17644pt>
 File: 2.Chapter/masks-939-ready-summary.pdf Graphic file (type pdf)
 
 <use 2.Chapter/masks-939-ready-summary.pdf>
 Package pdftex.def Info: 2.Chapter/masks-939-ready-summary.pdf used on input li
-ne 124.
+ne 108.
 (pdftex.def)             Requested size: 472.03123pt x 188.3444pt.
- [5 <./2.Chapter/masks-939-ready-summary.pdf>] [6]
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 191.
+ [5 <./2.Chapter/masks-939-ready-summary.pdf>]
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 172.
 
  (/usr/share/texmf/tex/latex/lm/omslmr.fd
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 191.
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 172.
 
-<3.Chapter/study-on-different-cells-norm.pdf, id=1697, 699.15831pt x 486.40132p
+<3.Chapter/study-on-different-cells-norm.pdf, id=1696, 699.15831pt x 486.40132p
 t>
 File: 3.Chapter/study-on-different-cells-norm.pdf Graphic file (type pdf)
  <use 3.Chapter/study-on-different-cells-norm.pdf>
 Package pdftex.def Info: 3.Chapter/study-on-different-cells-norm.pdf used on in
-put line 200.
+put line 181.
 (pdftex.def)             Requested size: 472.03123pt x 328.38837pt.
- [7] [8 <./3.Chapter/study-on-different-cells-norm.pdf>] (./summaryv2.bbl [9]) 
-[10] (./summaryv2.aux) ) 
+ [6] [7 <./3.Chapter/study-on-different-cells-norm.pdf>] [8] (./summaryv2.bbl [
+9]) [10] (./summaryv2.aux) ) 
 Here is how much of TeX's memory you used:
- 2563 strings out of 495004
- 35511 string characters out of 6180662
- 98019 words of memory out of 5000000
+ 2565 strings out of 495004
+ 35499 string characters out of 6180662
+ 98003 words of memory out of 5000000
  5720 multiletter control sequences out of 15000+600000
- 48473 words of font info for 41 fonts, out of 8000000 for 9000
+ 54466 words of font info for 43 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
- 38i,9n,32p,1075b,270s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/sh
-are/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm
-/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/share/texli
-ve/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb></usr/share/texmf/fonts/t
-ype1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></
-usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/
-public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/sha
-re/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/l
-m/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texm
-f/fonts/type1/public/lm/lmsy10.pfb>
-Output written on summaryv2.pdf (10 pages, 438795 bytes).
+ 38i,9n,32p,1274b,270s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/us
+r/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvip
+s/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/share/t
+exlive/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb></usr/share/texmf/fon
+ts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pf
+b></usr/share/texmf/fonts/type1/public/lm/lmbx9.pfb></usr/share/texmf/fonts/typ
+e1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr
+/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/publ
+ic/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/t
+exmf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmr
+i10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb>
+Output written on summaryv2.pdf (10 pages, 489202 bytes).
 PDF statistics:
- 1824 PDF objects out of 2073 (max. 8388607)
- 1209 compressed objects within 13 object streams
+ 1832 PDF objects out of 2073 (max. 8388607)
+ 1215 compressed objects within 13 object streams
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 

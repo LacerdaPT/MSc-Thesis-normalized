@@ -4,7 +4,7 @@
 \subsection{Spike Detekt}
 \label{subsec:spikedetekt}
 
-To my knowledge, SpikeDetekt \cite{Rossant2016} is the spike detection algorithm that yields the best results, in reasonable human and computational time. 
+To my knowledge, SpikeDetekt (SD) \cite{Rossant2016} is the spike detection algorithm that yields the best results, in reasonable human and computational time. 
 
 To deal with the problem of overlapping spikes SpikeDetekt uses (user-provided) information about geometry of the probe. This information consists of the electrodes positions and the adjacency graph that defines "neighbour" electrodes. 
 
@@ -32,7 +32,7 @@ In the context of this project, before running phy it was necessary to convert t
 
 $t_1C_1 , t_1C_2, \ldots , t_1C_N, \ldots t_TC_1 \ldots t_TC_N$ %t_2C_1, \ldots t_2C_{N_channels},
 
-The command "phy detect filename.prm" was used. The .prm file stores all the user-defined parameters necessary for phy to work. The relevant output of this command are a .kwik file (an HDF5 file with the spike times) and a .kwx file (an HDF5 file containing the extracted PCA features and the masks for each detected spike).
+The command "phy detect filename.prm" was used to run the SpikeDetekt algorithm. The .prm file stores all the user-defined parameters necessary for SpikeDetekt to work. The relevant output of this command are a .kwik file (an HDF5 file with the spike times) and a .kwx file (an HDF5 file containing the extracted PCA features and the masks for each detected spike).
 
 \subsection{Cross-Correlograms}
 \label{subsec:CC}

@@ -14,7 +14,7 @@ All the auto-correlograms display a usual distribution, clearly showing a gap in
 
 It is worth noting that on the auto-correlogram corresponding to the recording 939 a second peak is resolved around $\tau = -9 ms$ and $\tau = 9 ms$.
 
-For each recording, phy was run with the following parameters:
+For each recording, SpikeDetekt was run with the following parameters:
 The data was filtered with a forwards-backwards Butterworth filter of order 3 with cutoff frequency set to 500Hz. The noise standard deviation, $\sigma_{noise}$, was evaluated in 50 excerpts of 1 second each. The weak threshold was $\theta_w = 2 \sigma_{noise}$ and the strong threshold was $\theta_s = 4.5 \sigma_{noise}$.
 
 The results are presented in table \ref{tab:results-from-phy}.
@@ -31,7 +31,7 @@ Recording ID & \# detected Spikes & $\sigma_{noise}$ ($\mu V$) & $\theta_W$ ($\m
 997 & 156932 & 11.47 & 22.93 & 51.60 \\ 
 \end{tabular}
 \end{center}
-\caption{Summary of the output from phy. In this table are the values of the estimated standard deviations of the noise, and the calculated weak and strong thresholds for each recording. These values were converted into $\mu V$.}
+\caption{Summary of the output from SpikeDetekt. In this table are the values of the estimated standard deviations of the noise, and the calculated weak and strong thresholds for each recording. These values were converted into $\mu V$.}
 \label{tab:results-from-phy}
 \end{table}
 
@@ -45,15 +45,15 @@ In Fig. \ref{fig:CC} are the whole-probe cross-correlograms for the recordings, 
 \label{fig:CC}
 \end{figure}
 
-In Appendix A are the cross-correlograms per channel for the neuron 939, where the spike train output by phy was split according to the electrode the spike was detected on using the masks. It is noticeable that the peak only appears in some channels, which are the ones where the JTA has a larger amplitude in Fig. \ref{fig:recordings-summary}.
+In Appendix A are the cross-correlograms per channel for the neuron 939, where the spike train output by SpikeDetekt was split according to the electrode the spike was detected on using the masks. It is noticeable that the peak only appears in some channels, which are the ones where the JTA has a larger amplitude in Fig. \ref{fig:recordings-summary}.
 
-In Fig \ref{fig:CC}, all cross-correlograms present a somewhat coherent distribution. This means that, for every value $\tau$ in the considered interval, there exists some temporal correlation between the juxta neuron and the activity of the rest of the neurons in the recorded volume. This is to be expected. According to Ruiz-Mejias et al., the use of ketamine as anesthesia in rats provokes the synchronization in the population activity in many cortical areas, including the motor cortex. This gives rise to "up" and "down" states, where most neurons in the population are firing or silent, respectively. In addition, they report that the frequency of oscillation of these states is, on average, 0.97Hz, which is close to the firing rates reported in Neto et al. 
+In Fig \ref{fig:CC}, all cross-correlograms present a somewhat coherent distribution. This means that, for every value $\tau$ in the considered interval, there exists some temporal correlation between the juxta neuron and the activity of the rest of the neurons in the recorded volume. This is to be expected. According to Ruiz-Mejias et al. \cite{ruiz2011slow}, the use of ketamine as anesthesia in rats provokes the synchronization in the population activity in many cortical areas, including the motor cortex. This gives rise to "up" and "down" states, where most neurons in the population are firing or silent, respectively. In addition, they report that the frequency of oscillation of these states is, on average, 0.97Hz, which is close to the firing rates reported in Neto et al. 
 
-Only on the cross-correlogram corresponding to the recording 939 can we see a distinct peak when $\tau=0 ms$, on top of the correlation with the background activity. This means that phy managed to find juxta neuron.
+Only on the cross-correlogram corresponding to the recording 939 can we see a distinct peak when $\tau=0 ms$, on top of the correlation with the background activity. This means that SpikeDetekt managed to find juxta neuron.
 
 On the rest of the cross-correlograms in Fig \ref{fig:CC}, the peak around the central bin is never very clear. In fact, in the case of the recordings 8213 and 936, the peak is even shifted to $\tau=1 ms$. This could justify a more careful examination setting the size of the bin used in the histograms to a smaller value.
 
-To calculate the number of events corresponding to the juxta, it is necessary to remove the counts from the correlation with the background activity. To estimate this value, the average of the counts in the bin neighboring bins ($\tau = -1ms$ and $\tau = 1 ms$) was computed and subtracted to the counts in the central bin. The results are in table \ref{tab:CCcorrection}.
+To calculate the number of events corresponding to the juxta neuron, it is necessary to remove the counts from the correlation with the background activity. To estimate this value, the average of the counts in the bin neighboring bins ($\tau = -1ms$ and $\tau = 1 ms$) was computed and subtracted to the counts in the central bin. The results are in table \ref{tab:CCcorrection}.
 
 \begin{table}[!h]
 \begin{center}
@@ -73,11 +73,11 @@ To calculate the number of events corresponding to the juxta, it is necessary to
 \end{table}
 
 
-In most cases, phy yields a detection accuracy close to zero. This is not surprising considering the algorithm used by phy. The maximum P2P amplitude of JTAs of these cases lies between 19.4$\mu V$ and 30.8$\mu V$ and the strong threshold is always larger than 48.43 $\mu V$. Since it is required that at least one sample in a connected component be larger than the strong threshold these spikes are never detected. Three possible explanations exist for this number of detected events. First, the neuron may have spiked simultaneously to a large noise fluctuation causing it to be detected. Secondly, the connected components of these spikes could have been connected with the connected component of other spike which exceeded the strong threshold. This would result in the detection one single spike where the computed spike time was closer to the corresponding juxta spike time and therefore contributed to the central bin in the cross-correlograms.
+In most cases, SpikeDetekt yields a detection accuracy close to zero. This is not surprising considering the algorithm followed in SpikeDetekt. The maximum P2P amplitude of JTAs of these cases lies between 19.4$\mu V$ and 30.8$\mu V$ and the strong threshold is always larger than 48.43 $\mu V$. Since it is required that at least one sample in a connected component be larger than the strong threshold these spikes are never detected. Two possible explanations exist for this number of detected events. First, the neuron may have spiked simultaneously to a large noise fluctuation causing it to be detected. Secondly, the connected components of these spikes could have been connected with the connected component of other spike which exceeded the strong threshold. This would result in the detection one single spike where the computed spike time was closer to the corresponding juxta spike time and therefore contributed to the central bin in the cross-correlograms.
 
 Even in the recording 939 the detection rate is fairly low, considering it has a very large P2P amplitude. In fact, the connect component corresponding to spikes from the juxta neuron were expected to be large and therefore may have been merged together with other spikes present in probe. In this case, all these events will only be detected as one, which leads to the relatively low count in the central bin of the cross-correlogram of this recording.
 
-To illustrate this, the masks of the events that occurred closest to the juxta spikes were calculated. Examples of these mask are in Fig. \ref{fig:masks-examples}.
+To illustrate this, the masks of the events that occurred closest to the juxta spikes were extracted. Examples of these mask are in Fig. \ref{fig:masks-examples}.
  
 \begin{figure}[!h]
 	\centering

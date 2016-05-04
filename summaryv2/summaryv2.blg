@@ -7,36 +7,36 @@ Warning--to sort, need editor, organization, or key in recce1989tetrode
 Warning--can't use both volume and number fields in recce1989tetrode
 You've used 15 entries,
             2118 wiz_defined-function locations,
-            602 strings with 7553 characters,
-and the built_in function-call counts, 6058 in all, are:
+            602 strings with 7500 characters,
+and the built_in function-call counts, 6045 in all, are:
 = -- 566
-> -- 403
+> -- 398
 < -- 2
-+ -- 161
-- -- 144
-* -- 522
-:= -- 1042
++ -- 159
+- -- 142
+* -- 520
+:= -- 1038
 add.period$ -- 44
 call.type$ -- 15
-change.case$ -- 113
+change.case$ -- 112
 chr.to.int$ -- 0
 cite$ -- 17
 duplicate$ -- 176
-empty$ -- 388
-format.name$ -- 144
-if$ -- 1192
+empty$ -- 390
+format.name$ -- 142
+if$ -- 1191
 int.to.chr$ -- 0
 int.to.str$ -- 15
 missing$ -- 13
 newline$ -- 77
 num.names$ -- 29
-pop$ -- 100
+pop$ -- 99
 preamble$ -- 1
-purify$ -- 101
+purify$ -- 100
 quote$ -- 0
 skip$ -- 119
 stack$ -- 0
-substring$ -- 355
+substring$ -- 361
 swap$ -- 27
 text.length$ -- 2
 text.prefix$ -- 0

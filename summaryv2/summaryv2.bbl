@@ -29,13 +29,6 @@ Charles~M Gray, Pedro~E Maldonado, Mathew Wilson, and Bruce McNaughton.
   single-unit isolation from multi-unit recordings in cat striate cortex.
 \newblock {\em Journal of neuroscience methods}, 63(1):43--54, 1995.
 
-\bibitem{harris2000accuracy}
-Kenneth~D Harris, Darrell~A Henze, Jozsef Csicsvari, Hajime Hirase, and
-  Gy{\"o}rgy Buzs{\'a}ki.
-\newblock Accuracy of tetrode spike separation as determined by simultaneous
-  intracellular and extracellular measurements.
-\newblock {\em Journal of neurophysiology}, 84(1):401--414, 2000.
-
 \bibitem{kandel}
 Eric~Richard Kandel, James~Harris Schwartz, Thomas~M. Jessell, and Sarah Mack,
   editors.
@@ -76,6 +69,13 @@ Cyrille Rossant, Shabnam~N. Kadir, Dan F.~M. Goodman, John Schulman, Maximilian
 \newblock Spike sorting for large, dense electrode arrays.
 \newblock {\em Nat Neurosci}, 19(4):634--641, Apr 2016.
 \newblock Technical Report.
+
+\bibitem{ruiz2011slow}
+Marcel Ruiz-Mejias, Laura Ciria-Suarez, Maurizio Mattia, and Maria~V
+  Sanchez-Vives.
+\newblock Slow and fast rhythms generated in the cerebral cortex of the
+  anesthetized mouse.
+\newblock {\em Journal of neurophysiology}, 106(6):2910--2921, 2011.
 
 \bibitem{ruther2015new}
 Patrick Ruther and Oliver Paul.

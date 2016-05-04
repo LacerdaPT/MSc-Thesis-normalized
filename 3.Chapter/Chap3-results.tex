@@ -27,7 +27,7 @@ Only one GPU was utilized when performing the computations in this chapter, howe
 
 \subsection{Data Preparation}
 \label{subsec:data-preparation}
-The same datasets from the previous chapter were used. First it was necessary to prepare the data to be fed to the Deep Neural Network (DNN).Each dataset was first filtered using the same filter as phy: a forwards-backwards Butterworth filter of order 3 with cutoff frequency set to 500Hz. Each dataset was then normalized dividing by its maximum value, such that every sample has a value between -1 and 1.
+The same datasets from the previous chapter were used. First it was necessary to prepare the data to be fed to the Deep Neural Network (DNN).Each dataset was first filtered using the same filter as SpikeDetekt: a forwards-backwards Butterworth filter of order 3 with cutoff frequency set to 500Hz. Each dataset was then normalized dividing by its maximum value, such that every sample has a value between -1 and 1.
 
 Each example was defined to be the array of time windows of 100 samples for each of the 127 channels in the probe. Therefore, the input data has dimension 12700. However, due to constraints on the available hardware, not all windows were used. Each window is shifted by 5 samples from the previous one, i.e., the first example are the 127 time windows with $t \in [ 0 , 99]$ and the second example are the 127 time windows when $t \in [ 5, 104]$. Furthermore, only samples in $t \in [1000000,2000000]$ were utilized. This yields, at this stage, 199980 examples per dataset.
 
@@ -84,7 +84,7 @@ Usually the number of adjustable parameters in a DNN should be of the same order
 
 Following the results of \cite{glorot2011deep} Rectified Linear Units (RELU) were chosen as the activation function, which should result in faster learning and weaker dependence on the initial conditions. For the last layer a sigmoid activation function was used, since the problem under consideration is a binary classification.
 
-As for the loss function, cross entropy was chosen given its characteristic fast converge.
+As for the loss function, cross entropy was chosen given its characteristic fast convergence.
 
 The training algorithm was chosen to be AdaGrad.
 Regarding the regularization method, the L1-norm was utilized as well as dropout with probability parameter of 0.2.
@@ -225,7 +225,7 @@ The results are presented in Table \ref{table:confusion-matrix}.
 \begin{table}[htb]
 \begin{center}
 \begin{tabular}{c|cccc|cc}
-cell ID & TP & TN & FP & FN & TPR & phy acc.\\ \hline
+cell ID & TP & TN & FP & FN & TPR & SD acc.\\ \hline
 8213 & 0.00\% & 70.76\% & 0.00\% & 29.24\% & 0.00\% & -0.01\% \\
 936 & 0.00\% & 68.35\% & 0.00\% & 31.65\% & 0.00\% & -1.02\% \\ 
 939 & 26.85\% & 70.53\% & 0.38\% & 2.24\% & 92.31\% & 46.60\% \\ 
@@ -233,7 +233,7 @@ cell ID & TP & TN & FP & FN & TPR & phy acc.\\ \hline
 997 & 2.67\% & 75.80\% & 0.18\% & 21.35\% & 11.11\% & 1.99\% \\ 
 \end{tabular}
 \end{center}
-\caption{Values of the True Positives (TP), True Negatives (TN), False Positives (FP) and False Negatives (FN) at the end of the training, along with the value of the True Positive Rate (TPR). The accuracies achieved with phy in Chapter 2 are also presented. }
+\caption{Values of the True Positives (TP), True Negatives (TN), False Positives (FP) and False Negatives (FN) at the end of the training, along with the value of the True Positive Rate (TPR). The accuracies achieved with SpikeDetekt in Chapter 2 are also presented. }
 \label{table:confusion-matrix}
 \end{table}
 
@@ -249,14 +249,14 @@ Trained with the recording from the cell 939, the DNN managed to correctly class
 
 Looking at Fig. \ref{fig:study-cells} it can be seen that with the chosen training configuration all recordings trained the DNN after only a few epochs: by the epoch 20 the accuracies in all cases reached their final value, or even getting worse afterwards, and therefore applying a stop criteria should be considered.
 
-%%%%%%%%%%%%%%%%%%%%%%   COMPARISON WITH PHY    %%%%%%%%%%%%
-Comparing with the results using phy presented in Chapter 2, this method seems to give better results: when the network didn't converge to the "zero" solution, the detection rates more than doubled, reaching a 5-fold increase on the recording 997. However, the detection rates on the recordings 945 and 997 correspond to the detection of only one spike, since the validation set in these case only had 5 and 9 different positive examples. 
+%%%%%%%%%%%%%%%%%%%%%%   COMPARISON WITH SpikeDetekt    %%%%%%%%%%%%
+Comparing with the results using SpikeDetekt presented in Chapter 2, this method seems to give better results: when the network didn't converge to the "zero" solution, the detection rates more than doubled, reaching a 5-fold increase on the recording 997. However, the detection rates on the recordings 945 and 997 correspond to the detection of only one spike, since the validation set in these case only had 5 and 9 different positive examples. 
 
 It is also important to refer that the oscillations observed with the recording 945 and 997 suggest that the training used work may not be very robust: it appears that the network "jumps" easily between two local minima. Therefore it seems imperative to trained the network with more data. Another possible improvement would be increasing the probability parameter on the dropout procedure.
 
 The recording 939 trained the network into detecting 92.31\%, which is a large value, with very few false positives and false negatives. However, in this recording the P2P amplitude was 416.3 $\mu V$, with a noise standard deviation of 10.51 $\mu V$, and should be easily detected with the conservative application of classic methods such as a threshold-based detection.
 %Nonetheless, this method seems to be able to deal with situation of overlapping spikes. 
-%As it was discussed in Chapter 2, probably the number of events detected by phy in this recording is underestimated and thus the improvement in this dataset may not be a big as it may seem.
+%As it was discussed in Chapter 2, probably the number of events detected by SpikeDetekt in this recording is underestimated and thus the improvement in this dataset may not be a big as it may seem.
 
 In reality, the configurations and hyperparameters considered optimal were only studied with the recording 939 and may not be optimal for all datasets.
 
